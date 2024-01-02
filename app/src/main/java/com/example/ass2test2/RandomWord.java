@@ -83,7 +83,6 @@ public class RandomWord extends AppCompatActivity {
             }
         };
 
-        // Add the request to the RequestQueue.
         queue.add(stringRequest);
     }
 }

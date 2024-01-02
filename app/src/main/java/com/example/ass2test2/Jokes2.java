@@ -99,7 +99,6 @@ public class Jokes2 extends AppCompatActivity {
             }
         };
 
-        // Add the request to the RequestQueue.
         queue.add(stringRequest);
     }
 }

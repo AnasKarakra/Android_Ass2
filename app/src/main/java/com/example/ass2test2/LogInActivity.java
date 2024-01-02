@@ -11,17 +11,25 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
 public class LogInActivity extends AppCompatActivity {
     private static final String NAME="NAME";
     private static final String PASSWORD="PASSWORD";
     private static final String FLAG ="FLAG";
     private boolean flag=false;
     private SharedPreferences pref;
+    public static final String DATA = "DATA";
     private SharedPreferences.Editor editor;
     private EditText edName,edPassword;
     private CheckBox chkbox;
     private  Button btnLogin,btnSignup;
     private TextView textView;
+    private ArrayList<User> arraylist;
 
     //===============================================================================
 
@@ -30,6 +38,8 @@ public class LogInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        setupSharedPrefs();
+
         edName=findViewById(R.id.edtUsername);
         edPassword=findViewById(R.id.edtPassword);
         chkbox=findViewById(R.id.ckRememberMe);
@@ -40,34 +50,58 @@ public class LogInActivity extends AppCompatActivity {
         String name = intent.getStringExtra("name");
         String password = intent.getStringExtra("passwordSign");
         textView.setText("you can use this \n Username : "+name+"\n password : "+password);
-
-
-        setupSharedPrefs();
         checkPref();
+
+
+        arraylist=new ArrayList<>();
+        String userString = pref.getString(DATA, "");
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<ArrayList<User>>() {
+        }.getType();
+        arraylist = gson.fromJson(userString, type);
+
+
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name=edName.getText().toString();
                 String  password=edPassword.getText().toString();
 
-
-                if(chkbox.isChecked()){
-                    if(!flag){
-                        editor.putString(NAME,name);
-                        editor.putString(PASSWORD,password);
-                        editor.putBoolean(FLAG,true);
-                        editor.commit();
+                boolean correct_info=false;
+                for(int i=0;i<arraylist.size();i++){
+                    if(arraylist.get(i).getName().equals(name) && arraylist.get(i).getPassword().equals(password)){
+                        correct_info=true;
                     }
                 }
-                else {
-                    // Clear data from SharedPreferences if checkbox is not checked
-                    editor.remove(NAME);
-                    editor.remove(PASSWORD);
-                    editor.remove(FLAG);
-                    editor.apply();
+
+
+                if(correct_info==false){
+                    textView.setText("incorrect Info");
                 }
-                Intent intent =new Intent(LogInActivity.this,HomePage.class);
-                startActivity(intent);
+                else{
+                    textView.setText("");
+                    if(chkbox.isChecked()){
+                        if(!flag){
+                            editor.putString(NAME,name);
+                            editor.putString(PASSWORD,password);
+                            editor.putBoolean(FLAG,true);
+                            editor.commit();
+                        }
+                    }
+                    else {
+                        // Clear data from SharedPreferences if checkbox is not checked
+                        editor.remove(NAME);
+                        editor.remove(PASSWORD);
+                        editor.remove(FLAG);
+                        editor.apply();
+                    }
+                    Intent intent =new Intent(LogInActivity.this,HomePage.class);
+                    startActivity(intent);
+                }
+
+
 
             }
 
