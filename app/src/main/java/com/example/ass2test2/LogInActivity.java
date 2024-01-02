@@ -32,7 +32,7 @@ public class LogInActivity extends AppCompatActivity {
     private ArrayList<User> arraylist;
 
     //===============================================================================
-
+    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
