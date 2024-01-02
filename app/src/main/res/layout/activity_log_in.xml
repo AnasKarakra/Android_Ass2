@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".LogInActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/welcome_to_my_application"
+        style="@style/myStyle"
+        android:gravity="center"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:layout_margin="15dp"
+        android:id="@+id/edtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="👤 Username"/>
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:hint="🔑 Password"
+
+        android:inputType="textPassword"/>
+    <CheckBox
+        android:id="@+id/ckRememberMe"
+        android:layout_width="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:text="Remember Me ?"/>
+
+    <Button
+        android:id="@+id/btnLogIn"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="Log In" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="Sign Up" />
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"/>
+
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ass2test2</string>
+    <string name="registration_page">Registration Page</string>
+    <string name="username">👤 Username</string>
+    <string name="email">📧 Email</string>
+    <string name="welcome_to_my_application">Welcome to my Application</string>
+    <string name="random_word_app">Random Word App</string>
+    <string name="jokes_app">Jokes App</string>
+    <string name="random_jokes">Random jokes</string>
+    <string name="search_by_category">Search by Category</string>
+</resources>

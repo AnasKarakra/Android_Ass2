@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:background="@color/material_dynamic_secondary70"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edtSearchQuery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the category : sport ..ect"/>
+
+    <Button
+        android:id="@+id/btnSearchJokes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtSearchQuery"
+        android:text="Search "
+        android:onClick="btnSearchJokes_Click"/>
+
+    <TextView
+        android:id="@+id/txtSearchResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSearchJokes"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textSize="18sp"/>
+
+</RelativeLayout>

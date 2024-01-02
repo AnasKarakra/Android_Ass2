@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <Button
+        android:id="@+id/btnGetJoke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="click to take a random joke"
+        android:onClick="btnGetJoke_Click"/>
+
+    <TextView
+        android:id="@+id/txtJoke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnGetJoke"
+        android:layout_marginTop="40dp"
+        android:text=""
+        android:textSize="18sp"/>
+
+</RelativeLayout>

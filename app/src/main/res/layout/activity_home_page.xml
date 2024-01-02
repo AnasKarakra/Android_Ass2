@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btnFirstApp"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:text="@string/jokes_app" />
+
+    <Button
+        android:id="@+id/btnSecondApp"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnFirstApp"
+        android:layout_marginTop="43dp"
+        android:text="@string/random_word_app" />
+</RelativeLayout>

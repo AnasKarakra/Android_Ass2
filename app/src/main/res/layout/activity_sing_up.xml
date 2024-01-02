@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SingUpActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/registration_page"
+        style="@style/myStyle"
+        android:gravity="center"
+        android:textSize="30dp"/>
+
+
+    <EditText
+        android:id="@+id/edtUsernameS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="40dp"
+        android:hint="@string/username"/>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"/>
+
+
+
+    <EditText
+        android:id="@+id/edtPasswordS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:hint="🔑 Password"
+        />
+
+    <Button
+        android:id="@+id/btnSignUps"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Sign Up"/>
+
+</LinearLayout>
